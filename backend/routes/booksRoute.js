@@ -1,4 +1,4 @@
-import express from 'express'; 
+import express, { request, response } from 'express'; 
 import { Book } from '../models/bookModel.js';
 
 const router = express.Router(); 
@@ -53,6 +53,44 @@ router.get('/:id', async(request, response) =>{
         console.log(error.message); 
         response.status(500).send({ message: error.message}); 
 
+    }
+}); 
+
+router.delete('/:id', async(request, response) =>{
+    try {
+
+        const {id} = request.params
+
+        const result = await Book.findByIdAndDelete(id)
+        if(!result){
+            return response.status(404).send({message : 'Book not found'})
+        }
+        return response.status(200).send( {message : 'Book deleted successfully'})
+        
+    } catch (error) {
+        console.log(error.message)
+        return response.status(500).send({message: error.message})
+    }
+
+}); 
+
+router.put('/:id', async(request, response) =>{
+    try{
+        if(!request.body.title || !request.body.author || !request.body.publishYear){
+            return response.status(400).send({
+                message : 'Send all the fields: title, author, publishYear',
+            }); 
+        }
+        const {id }= request.params
+        const result = await Book.findByIdAndUpdate(id, request.body)
+        if(!result) {
+            return response.status(404).json({message: 'Book not found'}); 
+        }
+        return response.status(200).send({message : 'Book updated successfully'}); 
+
+    }catch(error){
+        console.log(error.message); 
+        response.status(500).send({message: error.message})
     }
 }); 
 
