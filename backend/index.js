@@ -16,13 +16,13 @@ app.use(cors())
 
 //allow custom origins, you have more contorl
 //only uses with these origins can access the server
-app.use(
-    cors({
-        origin: 'http://localhost:3000', 
-        methods: ['GET','POST', 'PUT', 'DELETE'], 
-        allowedHeaders: ['Content-Type'], 
-    })
-)
+// app.use(
+//     cors({
+//         origin: 'http://localhost:3000', 
+//         methods: ['GET','POST', 'PUT', 'DELETE'], 
+//         allowedHeaders: ['Content-Type'], 
+//     })
+// )
 
 // create a new route
 app.get('/', (request, response) => {
