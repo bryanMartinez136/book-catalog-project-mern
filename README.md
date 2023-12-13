@@ -1,1 +1,1 @@
-# book-catalog-project-mern
+# Book Catalog
