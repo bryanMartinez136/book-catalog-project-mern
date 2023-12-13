@@ -1,4 +1,4 @@
-# Book Catalog
+# MERN Book Catalog
 
 The MERN Book Catalog is a full-stack web application designed to manage a book catalog using the popular MERN stack (MongoDB, Express.js, React, and Node.js). This application provides seamless CRUD (Create, Read, Update, Delete) operations both on the backend and frontend, offering users a comprehensive tool for organizing and maintaining their book collections.
 
@@ -15,7 +15,7 @@ CORS Policy:
 
 Enforces Cross-Origin Resource Sharing (CORS) policies to ensure secure and controlled data exchange between the frontend and backend.
 
-###MongoDB Operations:
+### MongoDB Operations:
 
 Integrates MongoDB for efficient storage and retrieval of book data, utilizing the power of a NoSQL database for scalability and flexibility.
 
@@ -60,8 +60,5 @@ React Router
 
 ## Getting Started
 
-Clone the repository.
-Install dependencies for both the backend and frontend.
-Configure the MongoDB connection.
-cd to the frontend and enter npm run dev
-cd to the backend and enter npm run dev
+Clone the repository,
+install dependencies for both the backend and frontend. Configure the MongoDB connection with your own MongoDB cluster. Then, in two separate terminals, cd to the frontend and the backend folders. Enter npm run dev in both terminals.
