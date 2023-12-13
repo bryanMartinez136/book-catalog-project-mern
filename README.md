@@ -1,1 +1,1 @@
-# book-store-project-mern
+# book-catalog-project-mern
