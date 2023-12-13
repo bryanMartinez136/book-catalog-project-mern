@@ -56,6 +56,7 @@ router.get('/:id', async(request, response) =>{
     }
 }); 
 
+// delete book by id
 router.delete('/:id', async(request, response) =>{
     try {
 
@@ -74,6 +75,7 @@ router.delete('/:id', async(request, response) =>{
 
 }); 
 
+// edit an existing book by id
 router.put('/:id', async(request, response) =>{
     try{
         if(!request.body.title || !request.body.author || !request.body.publishYear){
@@ -83,6 +85,7 @@ router.put('/:id', async(request, response) =>{
         }
         const {id }= request.params
         const result = await Book.findByIdAndUpdate(id, request.body)
+        // if the book does not exist : 
         if(!result) {
             return response.status(404).json({message: 'Book not found'}); 
         }
